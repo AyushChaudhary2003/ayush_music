@@ -4,9 +4,20 @@ A modern, feature-rich music streaming application built with **React 18**, **Re
 
 ## 📸 Application Preview
 
-![Lyriks Music App - Main Interface](https://github.com/your-username/lyriks-music-app/assets/screenshot.png)
+<div align="center">
 
-*The main interface showcasing the Discover page with trending music, Top Charts sidebar, and the integrated music player at the bottom*
+![Lyriks Music App Interface](https://raw.githubusercontent.com/AyushChaudhary2003/ayush_music/main/app-screenshot.png)
+
+*🎵 **Lyriks Music Streaming App** - Discover Music page with Top Charts sidebar and integrated music player*
+
+</div>
+
+### 🎯 Features Showcased:
+- **🎼 Music Player**: Bottom-integrated player showing "Clean White Noise - Loop..." currently playing
+- **📊 Top Charts**: Trending songs including "lovely" by Billie Eilish & Khalid, "Young Dumb & Broke" by Khalid
+- **🎨 Beautiful UI**: Modern gradient backgrounds (dark blue to purple) with glass morphism effects  
+- **📱 Responsive Layout**: Clean sidebar navigation with Discover, Around You, and Top Charts sections
+- **🎧 Audio Controls**: Play/pause, seek bar, volume control, and track progress display
 
 ### 🎯 Key UI Features Shown:
 - **Left Sidebar**: Navigation menu with Discover, Around You, and Top Charts
@@ -17,7 +28,7 @@ A modern, feature-rich music streaming application built with **React 18**, **Re
 
 ## 🚀 Live Demo
 
-[🌐 View Live Application](https://your-vercel-deployment-url.vercel.app)
+[🌐 View Live Application](https://ayush-music.vercel.app) | [📱 GitHub Repository](https://github.com/AyushChaudhary2003/ayush_music)
 
 ## ✨ Key Features
 
@@ -33,11 +44,9 @@ A modern, feature-rich music streaming application built with **React 18**, **Re
 - 🌍 **Around You**: Discover popular music in your region
 - 📊 **Top Charts**: Stay updated with current chart-toppers
 
-## �️ Application Screenshots
+## 🖼️ Application Features
 
-### Main Dashboard
-![Main Interface](https://github.com/your-username/lyriks-music-app/assets/screenshot.png)
-*Complete application view with sidebar navigation, music discovery, top charts, and active music player*
+### 🎵 Complete Music Streaming Experience
 
 ### Key Interface Elements:
 
@@ -205,8 +214,8 @@ src/
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/your-username/lyriks-music-app.git
-   cd lyriks-music-app
+   git clone https://github.com/AyushChaudhary2003/ayush_music.git
+   cd ayush_music
    ```
 
 2. **Install dependencies**
@@ -342,9 +351,9 @@ This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) 
 
 ## 🔗 Links
 
-- **Live Demo**: [https://your-app.vercel.app](https://your-app.vercel.app)
-- **Repository**: [https://github.com/your-username/lyriks-music-app](https://github.com/your-username/lyriks-music-app)
-- **Issues**: [Report bugs and request features](https://github.com/your-username/lyriks-music-app/issues)
+- **Live Demo**: [https://ayush-music.vercel.app](https://ayush-music.vercel.app)
+- **Repository**: [https://github.com/AyushChaudhary2003/ayush_music](https://github.com/AyushChaudhary2003/ayush_music)
+- **Issues**: [Report bugs and request features](https://github.com/AyushChaudhary2003/ayush_music/issues)
 
 ---
 
