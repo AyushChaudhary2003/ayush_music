@@ -1,0 +1,28 @@
+<svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Music bars on the left (red) -->
+  <rect x="15" y="50" width="60" height="6" rx="3" fill="#E53E3E"/>
+  <rect x="15" y="80" width="30" height="6" rx="3" fill="#2D3748"/>
+  <rect x="15" y="110" width="40" height="6" rx="3" fill="#E53E3E"/>
+  <rect x="15" y="140" width="35" height="6" rx="3" fill="#2D3748"/>
+  <rect x="15" y="170" width="45" height="6" rx="3" fill="#E53E3E"/>
+  
+  <!-- Music bars on the right (alternating colors) -->
+  <rect x="125" y="50" width="60" height="6" rx="3" fill="#2D3748"/>
+  <rect x="140" y="80" width="45" height="6" rx="3" fill="#E53E3E"/>
+  <rect x="125" y="110" width="60" height="6" rx="3" fill="#2D3748"/>
+  <rect x="130" y="140" width="55" height="6" rx="3" fill="#E53E3E"/>
+  <rect x="125" y="170" width="60" height="6" rx="3" fill="#2D3748"/>
+  
+  <!-- Treble clef main shape -->
+  <path d="M100 25C115 25 130 35 130 50C130 65 120 75 110 80C105 82 100 85 100 90V140C100 155 85 165 75 165C65 165 55 155 55 145C55 135 65 125 75 125C80 125 85 127 85 132C85 137 80 140 75 140C70 140 65 137 65 132C65 127 70 125 75 125C85 125 95 135 95 145C95 155 85 160 75 160C60 160 50 150 50 140C50 130 60 120 75 120C90 120 105 130 105 145V90C105 80 110 75 115 70C125 65 135 55 135 45C135 30 120 20 100 20C85 20 75 30 75 45C75 55 80 65 90 65C95 65 100 60 100 55C100 50 95 45 90 45C85 45 80 50 80 55C80 65 90 70 100 70V25Z" fill="#E53E3E"/>
+  
+  <!-- Treble clef circular detail -->
+  <circle cx="100" cy="45" r="20" fill="none" stroke="#E53E3E" stroke-width="8"/>
+  <ellipse cx="100" cy="45" rx="12" ry="15" fill="#FFFFFF"/>
+  
+  <!-- Note stem and body -->
+  <line x1="100" y1="70" x2="100" y2="140" stroke="#E53E3E" stroke-width="4"/>
+  
+  <!-- Bottom note -->
+  <ellipse cx="85" cy="150" rx="15" ry="10" fill="#E53E3E"/>
+</svg>
