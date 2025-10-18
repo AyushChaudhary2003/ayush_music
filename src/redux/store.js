@@ -1,4 +1,4 @@
-﻿import { configureStore } from '@reduxjs/toolkit';
+import { configureStore } from '@reduxjs/toolkit';
 
 import { appleMusicApi } from './services/appleMusicApi';
 import playerReducer from './features/playerSlice';

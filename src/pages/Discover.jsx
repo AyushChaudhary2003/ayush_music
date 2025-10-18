@@ -1,4 +1,4 @@
-﻿import React from 'react';
+import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { Error, Loader, SongCard } from '../components';
@@ -10,6 +10,7 @@ const Discover = () => {
 
   if (isFetching) return <Loader title="Loading songs..." />;
 
+  // If there's an error but we have fallback data, use it
   if (error && !data) return <Error />;
 
   return (
