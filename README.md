@@ -2,22 +2,14 @@
 
 A modern, feature-rich music streaming application built with **React 18**, **Redux Toolkit**, and **Apple Music API** integration. Experience high-quality music streaming with a beautiful, responsive interface.
 
-## 📸 Application Preview
+## ✨ Application Overview
 
-<div align="center">
-
-![Lyriks Music App Interface](https://raw.githubusercontent.com/AyushChaudhary2003/ayush_music/main/app-screenshot.png)
-
-*🎵 **Lyriks Music Streaming App** - Discover Music page with Top Charts sidebar and integrated music player*
-
-</div>
-
-### 🎯 Features Showcased:
-- **🎼 Music Player**: Bottom-integrated player showing "Clean White Noise - Loop..." currently playing
-- **📊 Top Charts**: Trending songs including "lovely" by Billie Eilish & Khalid, "Young Dumb & Broke" by Khalid
+### 🎯 Core Features:
+- **🎼 Music Player**: Integrated player with full audio controls and real-time progress tracking
+- **📊 Top Charts**: Live trending music including popular artists like Billie Eilish & Khalid
 - **🎨 Beautiful UI**: Modern gradient backgrounds (dark blue to purple) with glass morphism effects  
 - **📱 Responsive Layout**: Clean sidebar navigation with Discover, Around You, and Top Charts sections
-- **🎧 Audio Controls**: Play/pause, seek bar, volume control, and track progress display
+- **🎧 Audio Controls**: Play/pause, seek bar, volume control, shuffle, and repeat functionality
 
 ### 🎯 Key UI Features Shown:
 - **Left Sidebar**: Navigation menu with Discover, Around You, and Top Charts
