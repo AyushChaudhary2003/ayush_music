@@ -2,7 +2,18 @@
 
 A modern, feature-rich music streaming application built with **React 18**, **Redux Toolkit**, and **Apple Music API** integration. Experience high-quality music streaming with a beautiful, responsive interface.
 
-![Lyriks Music App](https://via.placeholder.com/800x400/4A90E2/FFFFFF?text=Lyriks+Music+App)
+## 📸 Application Preview
+
+![Lyriks Music App - Main Interface](https://github.com/your-username/lyriks-music-app/assets/screenshot.png)
+
+*The main interface showcasing the Discover page with trending music, Top Charts sidebar, and the integrated music player at the bottom*
+
+### 🎯 Key UI Features Shown:
+- **Left Sidebar**: Navigation menu with Discover, Around You, and Top Charts
+- **Main Content**: "Discover Music" section with featured tracks and album artwork  
+- **Right Sidebar**: "Top Charts" with current trending songs
+- **Bottom Player**: Integrated music player with current track, controls, and progress bar
+- **Modern Design**: Beautiful gradient backgrounds and glass morphism effects
 
 ## 🚀 Live Demo
 
@@ -22,7 +33,30 @@ A modern, feature-rich music streaming application built with **React 18**, **Re
 - 🌍 **Around You**: Discover popular music in your region
 - 📊 **Top Charts**: Stay updated with current chart-toppers
 
-## 🛠️ Technology Stack
+## �️ Application Screenshots
+
+### Main Dashboard
+![Main Interface](https://github.com/your-username/lyriks-music-app/assets/screenshot.png)
+*Complete application view with sidebar navigation, music discovery, top charts, and active music player*
+
+### Key Interface Elements:
+
+| Component | Description |
+|-----------|-------------|
+| **🎵 Music Player** | Bottom-integrated player with track info, controls, and progress bar |
+| **📊 Top Charts** | Real-time trending music with play buttons and track details |
+| **🔍 Discovery** | Featured music content with beautiful album artwork |
+| **🎨 Modern UI** | Gradient backgrounds and smooth animations throughout |
+
+### Features Highlighted in Screenshot:
+- ✅ **Active Music Player**: "Clean White Noise - Loop..." currently playing
+- ✅ **Top Charts Display**: Popular tracks like "lovely" by Billie Eilish & Khalid
+- ✅ **Navigation Sidebar**: Clean, intuitive menu structure
+- ✅ **Responsive Layout**: Adaptive design that works on all screen sizes
+- ✅ **Album Artwork**: High-quality images with smooth loading
+- ✅ **Player Controls**: Play/pause, previous/next, shuffle, and volume controls
+
+## �🛠️ Technology Stack
 
 ### Frontend
 - **React 18** - Modern React with hooks and functional components
