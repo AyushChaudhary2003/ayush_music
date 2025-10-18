@@ -19,6 +19,13 @@ const MusicPlayer = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
+    // Reset time tracking when song changes
+    setAppTime(0);
+    setSeekTime(0);
+    setDuration(0);
+  }, [activeSong?.key]);
+
+  useEffect(() => {
     // Auto-play when song changes and player is active
     if (currentSongs.length && isActive && isPlaying) {
       // Ensure playback continues when song changes
@@ -83,9 +90,11 @@ const MusicPlayer = () => {
   };
 
   return (
-    <div className="relative sm:px-12 px-8 w-full flex items-center justify-between">
-      <Track isPlaying={isPlaying} isActive={isActive} activeSong={activeSong} />
-      <div className="flex-1 flex flex-col items-center justify-center">
+    <div className="relative sm:px-12 px-8 w-full flex items-center">
+      <div className="w-1/3 flex justify-start">
+        <Track isPlaying={isPlaying} isActive={isActive} activeSong={activeSong} />
+      </div>
+      <div className="w-1/3 flex flex-col items-center justify-center">
         <Controls
           isPlaying={isPlaying}
           isActive={isActive}
@@ -101,9 +110,15 @@ const MusicPlayer = () => {
         <Seekbar
           value={appTime}
           min="0"
-          max={duration}
-          onInput={(event) => setSeekTime(event.target.value)}
-          setSeekTime={setSeekTime}
+          max={duration || 30}
+          onInput={(event) => {
+            const newTime = parseFloat(event.target.value);
+            setSeekTime(newTime);
+          }}
+          setSeekTime={(time) => {
+            const clampedTime = Math.max(0, Math.min(time, duration || 30));
+            setSeekTime(clampedTime);
+          }}
           appTime={appTime}
         />
         <Player
@@ -118,7 +133,9 @@ const MusicPlayer = () => {
           onLoadedData={(event) => setDuration(event.target.duration)}
         />
       </div>
-      <VolumeBar value={volume} min="0" max="1" onChange={(event) => setVolume(event.target.value)} setVolume={setVolume} />
+      <div className="w-1/3 flex justify-end">
+        <VolumeBar value={volume} min="0" max="1" onChange={(event) => setVolume(event.target.value)} setVolume={setVolume} />
+      </div>
     </div>
   );
 };

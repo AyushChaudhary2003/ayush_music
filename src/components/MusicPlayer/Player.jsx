@@ -87,8 +87,14 @@ const Player = ({ activeSong, isPlaying, volume, seekTime, onEnded, onTimeUpdate
   }, [volume]);
 
   useEffect(() => {
-    if (ref.current && !isNaN(seekTime) && seekTime !== ref.current.currentTime) {
-      ref.current.currentTime = seekTime;
+    if (ref.current && !isNaN(seekTime) && seekTime !== null && seekTime !== undefined) {
+      const audio = ref.current;
+      const timeDiff = Math.abs(seekTime - audio.currentTime);
+      
+      // Only seek if there's a significant difference (avoid micro-adjustments)
+      if (timeDiff > 0.5) {
+        audio.currentTime = Math.max(0, Math.min(seekTime, audio.duration || 30));
+      }
     }
   }, [seekTime]);
 

@@ -1,8 +1,8 @@
 import React from 'react';
 
 const Track = ({ isPlaying, isActive, activeSong }) => (
-  <div className="flex-1 flex items-center justify-start">
-    <div className={`${isPlaying && isActive ? 'animate-[spin_3s_linear_infinite]' : ''} hidden sm:block h-16 w-16 mr-4`}>
+  <div className="flex items-center justify-start min-w-0">
+    <div className={`${isPlaying && isActive ? 'animate-[spin_3s_linear_infinite]' : ''} hidden sm:block h-12 w-12 mr-3 flex-shrink-0`}>
       <img 
         src={activeSong?.images?.coverart || activeSong?.artworkUrl100?.replace('100x100', '600x600') || 'https://via.placeholder.com/400x400/1a1a1a/ffffff?text=♪'} 
         alt={`${activeSong?.title || 'No Song'} cover art`} 
@@ -12,18 +12,18 @@ const Track = ({ isPlaying, isActive, activeSong }) => (
         }}
       />
     </div>
-    <div className="w-[50%]">
-      <p className="truncate text-white font-bold text-lg">
+    <div className="flex-1 min-w-0 max-w-48">
+      <p className="truncate text-white font-bold text-sm">
         {activeSong?.title || 'No active Song'}
       </p>
-      <p className="truncate text-gray-300">
+      <p className="truncate text-gray-300 text-xs">
         {activeSong?.subtitle || 'No active Song'}
       </p>
       
       {/* Preview Indicator */}
       {activeSong && (activeSong.previewUrl || activeSong.hub?.actions?.[1]?.uri) && (
         <div className="text-xs text-blue-400 mt-1">
-          🎵 Playing 30-second preview
+          🎵 30s preview
         </div>
       )}
     </div>
