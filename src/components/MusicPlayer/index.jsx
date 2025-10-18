@@ -20,13 +20,11 @@ const MusicPlayer = () => {
 
   useEffect(() => {
     // Auto-play when song changes and player is active
-    if (currentSongs.length && isActive) {
-      // Small delay to ensure the new song is loaded
+    if (currentSongs.length && isActive && isPlaying) {
+      // Ensure playback continues when song changes
       const timer = setTimeout(() => {
-        if (isPlaying) {
-          dispatch(playPause(true));
-        }
-      }, 200);
+        dispatch(playPause(true));
+      }, 150);
       
       return () => clearTimeout(timer);
     }
@@ -45,17 +43,23 @@ const MusicPlayer = () => {
   const handleNextSong = () => {
     const wasPlaying = isPlaying;
     
+    // Calculate next index
+    let nextIndex;
     if (!shuffle) {
-      dispatch(nextSong((currentIndex + 1) % currentSongs.length));
+      nextIndex = (currentIndex + 1) % currentSongs.length;
     } else {
-      dispatch(nextSong(Math.floor(Math.random() * currentSongs.length)));
+      nextIndex = Math.floor(Math.random() * currentSongs.length);
     }
-
-    // Auto-play next song if we were playing
-    if (wasPlaying && currentSongs.length > 0) {
+    
+    // Dispatch next song
+    dispatch(nextSong(nextIndex));
+    
+    // Auto-play next song if we were playing or if song ended naturally
+    if (currentSongs.length > 0 && (wasPlaying || isActive)) {
+      // Force play state to true for continuous playback
       setTimeout(() => {
         dispatch(playPause(true));
-      }, 150);
+      }, 100);
     }
   };
 

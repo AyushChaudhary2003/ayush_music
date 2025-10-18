@@ -69,6 +69,24 @@ const generateFallbackSongs = () => {
       artists: [{ adamid: "soundhelix" }],
       hub: { actions: [{ uri: "#" }, { uri: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3" }] },
       previewUrl: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3",
+    },
+    {
+      key: "fallback-3",
+      title: "Jazz Vibes",
+      subtitle: "SoundHelix",
+      images: { coverart: "https://via.placeholder.com/600x600/FF6B6B/FFFFFF?text=Jazz" },
+      artists: [{ adamid: "soundhelix" }],
+      hub: { actions: [{ uri: "#" }, { uri: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3" }] },
+      previewUrl: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3",
+    },
+    {
+      key: "fallback-4",
+      title: "Classical Motion",
+      subtitle: "SoundHelix", 
+      images: { coverart: "https://via.placeholder.com/600x600/4ECDC4/FFFFFF?text=Classical" },
+      artists: [{ adamid: "soundhelix" }],
+      hub: { actions: [{ uri: "#" }, { uri: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-4.mp3" }] },
+      previewUrl: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-4.mp3",
     }
   ];
 };

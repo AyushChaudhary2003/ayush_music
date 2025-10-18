@@ -37,6 +37,8 @@ const playerSlice = createSlice({
 
       state.currentIndex = action.payload;
       state.isActive = true;
+      // Keep playing state when moving to next song
+      state.isPlaying = state.isPlaying;
     },
 
     prevSong: (state, action) => {
@@ -48,6 +50,8 @@ const playerSlice = createSlice({
 
       state.currentIndex = action.payload;
       state.isActive = true;
+      // Keep playing state when moving to previous song
+      state.isPlaying = state.isPlaying;
     },
 
     playPause: (state, action) => {

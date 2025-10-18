@@ -11,58 +11,68 @@ const Player = ({ activeSong, isPlaying, volume, seekTime, onEnded, onTimeUpdate
   
   // Effect to handle audio source changes
   useEffect(() => {
-    if (ref.current && audioSrc && audioSrc !== currentSrc) {
+    if (ref.current && audioSrc) {
       const audio = ref.current;
       
-      // Safely pause and reset
-      if (!audio.paused) {
-        audio.pause();
-      }
-      
-      // Wait a bit before changing source to avoid race conditions
-      setTimeout(() => {
-        if (audio && audio.src !== audioSrc) { // Check if we need to update source
-          audio.currentTime = 0;
-          audio.src = audioSrc;
-          setCurrentSrc(audioSrc);
-          setHasError(false);
-          audio.load();
+      // Only update if the source actually changed
+      if (audioSrc !== currentSrc) {
+        // Safely pause and reset
+        if (!audio.paused) {
+          audio.pause();
         }
-      }, 50);
+        
+        // Reset states
+        setHasError(false);
+        audio.currentTime = 0;
+        
+        // Update source immediately
+        audio.src = audioSrc;
+        setCurrentSrc(audioSrc);
+        
+        // Load the new audio
+        audio.load();
+      }
     }
   }, [audioSrc, currentSrc]);
 
   // Effect to handle play/pause
   useEffect(() => {
-    if (ref.current && audioSrc) {
+    if (ref.current && audioSrc && !hasError) {
       const audio = ref.current;
       
-      if (isPlaying && !hasError) {
-        // Wait for the audio to be ready before playing
+      if (isPlaying) {
         const attemptPlay = async () => {
           try {
-            if (audio.readyState >= 2) { // HAVE_CURRENT_DATA or higher
+            // Wait for audio to be ready
+            if (audio.readyState >= 1) { // HAVE_METADATA or higher
               await audio.play();
             } else {
-              // Wait for audio to load first
-              const handleCanPlay = () => {
-                audio.removeEventListener('canplay', handleCanPlay);
-                audio.play().catch((error) => {
-                  console.log('Delayed playback failed:', error);
+              // Set up event listener for when audio is ready
+              const handleCanPlay = async () => {
+                audio.removeEventListener('canplaythrough', handleCanPlay);
+                try {
+                  await audio.play();
+                } catch (playError) {
+                  console.log('Playback failed:', playError);
                   setHasError(true);
-                });
+                }
               };
-              audio.addEventListener('canplay', handleCanPlay);
+              audio.addEventListener('canplaythrough', handleCanPlay);
+              
+              // Fallback timeout
+              setTimeout(() => {
+                audio.removeEventListener('canplaythrough', handleCanPlay);
+              }, 3000);
             }
           } catch (error) {
-            console.log('Playback failed:', error);
+            console.log('Play attempt failed:', error);
             setHasError(true);
           }
         };
         
         attemptPlay();
       } else {
-        // Only pause if currently playing to avoid AbortError
+        // Pause audio
         if (!audio.paused) {
           audio.pause();
         }
@@ -107,9 +117,12 @@ const Player = ({ activeSong, isPlaying, volume, seekTime, onEnded, onTimeUpdate
   };
 
   const handleEnded = () => {
-    // Only call onEnded if not in repeat mode (loop handles repeat)
-    if (onEnded) {
-      onEnded();
+    // Call onEnded to trigger next song (repeat mode is handled by loop attribute)
+    if (onEnded && !repeat) {
+      // Small delay to ensure smooth transition
+      setTimeout(() => {
+        onEnded();
+      }, 100);
     }
   };
 
